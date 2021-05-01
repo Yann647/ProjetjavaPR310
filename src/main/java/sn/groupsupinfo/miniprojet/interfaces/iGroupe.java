@@ -19,6 +19,6 @@ public interface iGroupe {
     void deleteGroupe (int id);
     Groupe getGroupeById(int id);
     List<Groupe> getAllGroupe();
-    List<Groupe>listGroupe = new ArrayList<Groupe>();
+    List<Groupe>listGroupe = new ArrayList<>();
     
 }

@@ -11,13 +11,15 @@ package sn.groupsupinfo.miniprojet;
  */
 public class Groupe {
     private int id;
+    private String matricule;
     private String nom;
     
     
     public Groupe () {}
     
-    public Groupe (int id, String nom) {
+    public Groupe (int id, String matricule , String nom) {
         this.id =id;
+        this.matricule =matricule;
         this.nom =nom;
     }
 
@@ -29,6 +31,16 @@ public class Groupe {
         this.id = id;
     }
 
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+    
+    
+
     public String getNom() {
         return nom;
     }
@@ -39,8 +51,11 @@ public class Groupe {
 
     @Override
     public String toString() {
-        return "Groupe{" + "id=" + id + ", nom=" + nom + '}';
+        return "Groupe{" + "id=" + id + ", matricule=" + matricule + ", nom=" + nom + '}';
     }
+
+    
+    
     
     
     

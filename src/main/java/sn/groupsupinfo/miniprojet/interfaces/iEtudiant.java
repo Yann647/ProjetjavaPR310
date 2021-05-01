@@ -20,6 +20,6 @@ public interface iEtudiant {
     void deleteEtudiant(int id);
     Etudiant getEtudiantById(int id);
     List<Etudiant> getAllEtudiant();
-    List<Etudiant>listEtudiant = new ArrayList<Etudiant>();
+    List<Etudiant>listEtudiant = new ArrayList<>();
     
 }

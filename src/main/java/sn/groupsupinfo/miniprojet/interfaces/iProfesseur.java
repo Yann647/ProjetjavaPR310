@@ -20,6 +20,6 @@ public interface iProfesseur {
     void deleteProfesseur (int id);
     Professeur getProfesseurById(int id);
     List<Professeur> getAllProfesseur();
-    List<Professeur> listProfesseur = new ArrayList<Professeur>();
+    List<Professeur> listProfesseur = new ArrayList<>();
     
 }

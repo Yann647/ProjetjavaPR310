@@ -15,31 +15,46 @@ import sn.groupsupinfo.miniprojet.interfaces.iGroupe;
  * @author YANN
  */
 public class GroupImp implements iGroupe {
-    ArrayList<Groupe>listGroupe = new ArrayList<Groupe>();
+    ArrayList<Groupe>groupes = new ArrayList<>();
 
     @Override
     public void addGroupe(Groupe groupe) {
-        listGroupe.add(groupe);
+        groupes.add(groupe);
     }
 
     @Override
     public void updateGroupe(Groupe groupe) {
-        
+        for (Groupe groupe1:groupes){
+            if (groupe1.getId()==groupe.getId())
+            {
+                groupe1.setMatricule(groupe.getMatricule());
+                groupe1.setNom(groupe.getNom());
+            }
+        }
     }
 
-    @Override
     public void deleteGroupe(Groupe groupe) {
-        listGroupe.remove(groupe);
+        groupes.remove(groupe);
     }
 
     @Override
     public Groupe getGroupeById(int id) {
-        
+        for(Groupe groupe:groupes){
+            if(groupe.getId()==id){
+                return groupe;
+            }
+        }
+        return null;
     }
 
     @Override
     public List<Groupe> getAllGroupe() {
-        return listGroupe;
+        return groupes;
+    }
+
+    @Override
+    public void deleteGroupe(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

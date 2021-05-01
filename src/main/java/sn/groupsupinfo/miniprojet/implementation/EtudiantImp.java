@@ -16,16 +16,16 @@ import sn.groupsupinfo.miniprojet.interfaces.iEtudiant;
  */
 public class EtudiantImp implements iEtudiant {
     
-    ArrayList<Etudiant>listEtudiant = new ArrayList<Etudiant>();
+    ArrayList<Etudiant>etudiants = new ArrayList<>();
 
     @Override
     public void addEtudiant(Etudiant etudiant) {
-        listEtudiant.add(etudiant);
+        etudiants.add(etudiant);
     }
 
     @Override
     public void updateEtudiant(Etudiant etudiant) {
-        for(Etudiant etudiant1:listEtudiant)
+        for(Etudiant etudiant1:etudiants)
         {
             if(etudiant1.getId()==etudiant.getId())
             {
@@ -44,15 +44,15 @@ public class EtudiantImp implements iEtudiant {
         }
     }
 
-    @Override
     public void deleteEtudiant(Etudiant etudiant) {
-        listEtudiant.remove(etudiant);
+        
+        etudiants.remove(etudiant);
     }
 
     @Override
     public Etudiant getEtudiantById(int id) {
-       for(Etudiant etudiant:listEtudiant){
-           if(etudiant.getId()){
+       for(Etudiant etudiant:etudiants){
+           if(etudiant.getId()==id){
                return etudiant;
            }
        }
@@ -61,7 +61,12 @@ public class EtudiantImp implements iEtudiant {
 
     @Override
     public List<Etudiant> getAllEtudiant() {
-        return listEtudiant;
+        return etudiants;
+    }
+
+    @Override
+    public void deleteEtudiant(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
